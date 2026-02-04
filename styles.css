@@ -1,58 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: white;
-    font-family: "Nunito", sans-serif;
-    flex-direction: column;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #d32f2f;
-  }
-  
-  .buttons {
-    margin-top: 20px;
-  }
-  
-  .yes-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #fa0561;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
 
-  .yes-button:hover{
-    background-color: #e03777;
-  }
   
-  .no-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #d3d3d3;
-    color: black
-    ;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .gif_container img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
+ body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe4e1; /* Light Pink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.view { transition: opacity 0.5s ease; }
+.hidden { display: none; opacity: 0; }
+
+h1 { color: #db2777; font-size: 3rem; }
+
+/* The "No" button often moves away to make it hard to click! */
+#noBtn {
+  position: relative;
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background-color: #db2777;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Sparkling Heart Background for Page 2 */
+.heart-sparkle {
+  position: absolute;
+  font-size: 24px;
+  animation: float-sparkle 3s linear infinite;
+  opacity: 0;
+}
+
+@keyframes float-sparkle {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  50% { opacity: 1; filter: brightness(2) drop-shadow(0 0 5px white); }
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
